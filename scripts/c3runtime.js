@@ -4544,6 +4544,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.Every,
 		C3.Plugins.System.Acts.SubVar,
 		C3.Plugins.System.Acts.GoToLayout,
+		C3.Plugins.Arr.Cnds.CompareX,
 		C3.Plugins.List.Acts.AddItem,
 		C3.Behaviors.Tween.Acts.TweenOneProperty,
 		C3.Plugins.Sprite.Acts.SetPosToObject,
