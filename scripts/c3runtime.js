@@ -4493,16 +4493,18 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.Sprite.Acts.SetAnim,
 		C3.Plugins.System.Acts.SetVar,
+		C3.Plugins.Sprite.Acts.SetVisible,
+		C3.Behaviors.Tween.Acts.TweenOneProperty,
+		C3.Plugins.System.Acts.Wait,
+		C3.Behaviors.Tween.Acts.TweenTwoProperties,
 		C3.Plugins.Touch.Cnds.OnTapGestureObject,
 		C3.Plugins.Sprite.Cnds.IsVisible,
 		C3.Plugins.System.Cnds.CompareBoolVar,
-		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Plugins.System.Acts.SetBoolVar,
 		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.System.Acts.CreateObject,
 		C3.Plugins.Sprite.Exps.X,
 		C3.Plugins.Sprite.Exps.Y,
-		C3.Plugins.System.Acts.Wait,
 		C3.Behaviors.MoveTo.Acts.MoveToPosition,
 		C3.Plugins.Sprite.Acts.SetMirrored,
 		C3.Plugins.Sprite.Acts.SetAngle,
@@ -4537,7 +4539,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Cnds.IsBoolInstanceVarSet,
 		C3.Plugins.Sprite.Acts.SetBoolInstanceVar,
 		C3.Behaviors.Tween.Cnds.IsPlaying,
-		C3.Behaviors.Tween.Acts.TweenTwoProperties,
 		C3.Plugins.List.Cnds.OnSelectionChanged,
 		C3.Plugins.List.Cnds.CompareSelectedText,
 		C3.Plugins.System.Cnds.IsGroupActive,
@@ -4546,7 +4547,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.Arr.Cnds.CompareX,
 		C3.Plugins.List.Acts.AddItem,
-		C3.Behaviors.Tween.Acts.TweenOneProperty,
 		C3.Plugins.Sprite.Acts.SetPosToObject,
 		C3.Plugins.Sprite.Acts.StartAnim,
 		C3.Plugins.Text.Acts.SetZElevation,
@@ -4640,6 +4640,8 @@ self.C3_JsPropNameTable = [
 	{羊: 0},
 	{手裡劍: 0},
 	{秘術標題: 0},
+	{BOSS幻影: 0},
+	{Sprite3: 0},
 	{施法中: 0},
 	{目前狀態: 0},
 	{技能: 0},
@@ -4705,7 +4707,9 @@ self.InstanceType = {
 	高級隨機: class extends self.IInstance {},
 	羊: class extends self.ISpriteInstance {},
 	手裡劍: class extends self.ISpriteInstance {},
-	秘術標題: class extends self.ITextInstance {}
+	秘術標題: class extends self.ITextInstance {},
+	BOSS幻影: class extends self.ISpriteInstance {},
+	Sprite3: class extends self.ISpriteInstance {}
 }
 }
 
@@ -4814,13 +4818,18 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => n0.ExpInstVar();
 		},
+		() => "",
+		() => 540,
+		() => 3,
 		() => 1,
+		() => 260,
+		() => 315,
+		() => 2,
 		() => 0,
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject();
 		},
-		() => "",
 		() => "1",
 		() => 0.5,
 		() => 360,
@@ -4830,7 +4839,6 @@ self.C3_ExpressionFuncs = [
 		() => 650,
 		() => 230,
 		() => 77,
-		() => 2,
 		() => 973,
 		() => 850,
 		() => 524,
@@ -4840,7 +4848,6 @@ self.C3_ExpressionFuncs = [
 		() => 587,
 		() => 326,
 		() => 133,
-		() => 3,
 		() => 5,
 		() => 600,
 		() => 840,
